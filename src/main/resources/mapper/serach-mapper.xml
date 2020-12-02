@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happy.model.mapper.SearchMapper">
+
+<select id="initSido" resultType="com.ssafy.happy.model.dto.SidoCodeDto">
+	SELECT SIDO_CODE, SIDO_NAME
+	FROM SIDOCODE;
+</select>
+
+<select id="initGugun" parameterType="String" resultType="com.ssafy.happy.model.dto.GugunCodeDto">
+	SELECT GUGUN_CODE, GUGUN_NAME
+	FROM GUGUNCODE
+	WHERE GUGUN_CODE LIKE CONCAT(#{sido_code}, '%')
+</select>
+
+<select id="initDong" parameterType="String" resultType="com.ssafy.happy.model.dto.DongCodeDto">
+	SELECT DONGCODE as dong_code, DONG as dong_name
+	FROM DONGCODE
+	WHERE DONGCODE LIKE CONCAT(#{gugun_code}, '%')
+</select>
+
+<select id="searchByDongName" parameterType="String" resultType="com.ssafy.happy.model.dto.DongCodeDto">
+	SELECT DONGCODE as dong_code, DONG as dong_name
+	FROM DONGCODE
+	WHERE DONG LIKE CONCAT('%', #{dong_name} , '%')
+</select>
+</mapper>

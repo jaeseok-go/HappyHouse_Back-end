@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happy.model.mapper.JjimMapper">
+
+<!-- 
+1. 처음에 홈 화면에 찜 목록 제일 많은 매물의 집정보 출력
+
+2. 상세 정보에서 내가 찜했는지 안했는지 보여주기
+
+3. 상세 정보에서 내가 찜했다면 클릭 시 찜목록 삭제
+
+4. 상세 정보에서 내가 찜안했다면 클릭 시 찜목록 생성 + 집 정보 테이블도 생성
+ -->
+
+<select id="selectJjimRank" resultType="com.ssafy.happy.model.dto.HinfoDto">
+	SELECT A.HNO, B.HNAME, B.HDONG, B.HWIDTH, B.HPRICE, COUNT(*) AS COUNT
+	FROM JJIM A INNER JOIN HINFO B
+	ON A.HNO = B.HNO
+	GROUP BY A.HNO
+	ORDER BY COUNT(*) desc
+	LIMIT 6
+</select>
+
+<select id="selectIsJjim" parameterType="com.ssafy.happy.model.dto.JjimDto" resultType="int">
+	SELECT COUNT(*)
+	FROM JJIM
+	WHERE USERID = #{userid}
+	AND HNO = #{hno}
+</select>
+
+<delete id="deleteJjim" parameterType="com.ssafy.happy.model.dto.JjimDto">
+	DELETE
+	FROM JJIM
+	WHERE USERID = #{userid}
+	AND HNO= #{hno}
+</delete>
+
+<insert id="insertJjim" parameterType="com.ssafy.happy.model.dto.JjimDto">
+	INSERT INTO JJIM
+	VALUES (#{userid}, #{hno});
+</insert>
+
+<insert id="insertHinfo" parameterType="com.ssafy.happy.model.dto.HinfoDto">
+	INSERT INTO HINFO
+	VALUES (#{hno}, #{hname}, #{hdong}, #{hwidth}, #{hprice})
+</insert>
+
+<select id="isHinfo" parameterType="String" resultType="int">
+	SELECT COUNT(*)
+	FROM HINFO
+	WHERE HNO = #{hno};
+</select>
+
+<select id="selectMyJjim" parameterType="String" resultType="com.ssafy.happy.model.dto.HinfoDto">
+	SELECT A.HNO, B.HNAME, B.HDONG, B.HWIDTH, B.HPRICE
+	FROM JJIM A INNER JOIN HINFO B
+	ON A.HNO = B.HNO
+	WHERE A.USERID = #{userid};
+</select>
+
+
+</mapper>

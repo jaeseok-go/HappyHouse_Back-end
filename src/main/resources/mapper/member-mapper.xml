@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happy.model.mapper.MemberMapper">
+
+<insert id="joinMember" parameterType="com.ssafy.happy.model.dto.MemberDto">
+	INSERT INTO MEMBER (USERID, USERPW, USERNAME)
+	VALUES (#{userid},#{userpw},#{username});
+</insert>
+
+<select id="selectOne" parameterType="String" resultType="com.ssafy.happy.model.dto.MemberDto">
+	SELECT USERID, USERPW, USERNAME
+	FROM MEMBER
+	WHERE USERID = #{userid}
+</select>
+
+<update id="updateMember" parameterType="com.ssafy.happy.model.dto.MemberDto">
+	UPDATE MEMBER
+	SET USERPW = #{userpw}, USERNAME = #{username}
+	WHERE USERID = #{userid}
+</update>
+
+
+<delete id="deleteMember" parameterType="String">
+	DELETE
+	FROM MEMBER
+	WHERE USERID = #{userid}
+</delete>
+
+
+
+
+</mapper>
