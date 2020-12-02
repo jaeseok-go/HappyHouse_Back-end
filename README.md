@@ -13,7 +13,6 @@
 > - 스프링 부트를 사용하여 위와 같은 다양한 라이브러리를 사용했다. DB와 연동하기 위해 MyBatis를 사용했다.  
 > ### MySQL
 > - __ERD__  
-> ![ERD](https://github.com/jaeseok-go/HappyHouse_Back-end/blob/main/img/%EC%B5%9C%EC%A2%85%20ERD(%EC%82%AC%EC%A7%84).JPG =250x250)
-> <img src="https://github.com/jaeseok-go/HappyHouse_Back-end/blob/main/img/%EC%B5%9C%EC%A2%85%20ERD(%EC%82%AC%EC%A7%84).JPG" width="300" height="300">
+> <img src="https://github.com/jaeseok-go/HappyHouse_Back-end/blob/main/img/%EC%B5%9C%EC%A2%85%20ERD(%EC%82%AC%EC%A7%84).JPG" width="500" height="500">  
 > - 시/도, 구/군, 동 코드에 대한 데이터를 가지고 있다.
 > - 회원 정보와 회원 마다의 찜 목록(+ 찜한 매물에 대한 데이터), 게시판 데이터를 가지고 있다.
