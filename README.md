@@ -7,11 +7,11 @@
 > Back-end를 RESTful하게 구현하였으며 REST 서버에서는 회원, 게시판, 찜, 지역 정보에 대한 request에 response한다.  
 
 ## Enviroment
-> Spring Boot  
+> # Spring Boot  
 > - __dependency__
 >  &nbsp; &nbsp; Spring Boot JDBC, Spring Boot WEB, Spring Boot Services, Spring Boot Mybatis, Spring Boot DevTools, JSTL, MySQL, JSON
-> - 스프링 부트를 사용하여 위와 같은 다양한 라이브러리를 사용했다. DB와 연동하기 위해 MyBatis를 사용했다.
-> MySQL
+> - 스프링 부트를 사용하여 위와 같은 다양한 라이브러리를 사용했다. DB와 연동하기 위해 MyBatis를 사용했다.  
+> # MySQL
 > - __ERD__
 > (img/최종 ERD(사진).JPG)
 > - 시/도, 구/군, 동 코드에 대한 데이터를 가지고 있다.
