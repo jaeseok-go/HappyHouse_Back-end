@@ -8,7 +8,7 @@
 
 ## Enviroment
 > ### Spring Boot  
-> - __dependency__
+> - __dependency__  
 >  &nbsp; &nbsp; Spring Boot JDBC, Spring Boot WEB, Spring Boot Services, Spring Boot Mybatis, Spring Boot DevTools, JSTL, MySQL, JSON
 > - 스프링 부트를 사용하여 위와 같은 다양한 라이브러리를 사용했다. DB와 연동하기 위해 MyBatis를 사용했다.  
 > ### MySQL
