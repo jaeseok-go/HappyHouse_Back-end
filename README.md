@@ -21,7 +21,7 @@
 ## Structure & Flow  
 > <img src="https://github.com/jaeseok-go/HappyHouse_Back-end/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%A1%B0.png" width="550" height="200">   
 >
-> 전체적인 서버의 구조는 위와 같다. (직접 구현한 부분만 표시해보았다.)    
+> 직접 구현한 부분만 구조로 표시해보았다. 서버의 작동 흐름은 아래와 같다.
 >
 > 1. Client의 요청이 도착하면 이에 알맞는 컨트롤러에 디스패쳐서블릿이 지정해준다.    
 >
