@@ -19,10 +19,10 @@
 > - 회원 정보와 회원 마다의 찜 목록(+ 찜한 매물에 대한 데이터), 게시판 데이터를 가지고 있다.
 
 ## Structure & Flow  
-> <img src="https://github.com/jaeseok-go/HappyHouse_Back-end/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%A1%B0.png" width="500" height="500">  
-> 전체적인 서버의 구조는 위와 같다. (직접 구현한 부분만 표시해보았다.)  
-> 1. Client의 요청이 도착하면 이에 알맞는 컨트롤러에 디스패쳐서블릿이 지정해준다.  
-> 2. 해당 컨트롤러에서 필요한 서비스 빈을 가져와서 그 서비스의 메소드를 호출한다.  
-> 3. 해당 서비스에서는 MyBatis 라이브러리를 활용하여 DAO 대신 SqlSession 객체로 매퍼에 접근한다.  
-> 4. 매퍼는 서비스에서 요구하는 응답을 받기 위해 DB에 쿼리를 날려서 필요한 결과를 얻어서 반환한다.  
-> 5. 반환된 결과는 컨트롤러에게 전달되어 이를 ResponseEntity로 Client에 응답한다.  
+> <img src="https://github.com/jaeseok-go/HappyHouse_Back-end/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%A1%B0.png" width="500" height="300">    
+> 전체적인 서버의 구조는 위와 같다. (직접 구현한 부분만 표시해보았다.)    
+> 1. Client의 요청이 도착하면 이에 알맞는 컨트롤러에 디스패쳐서블릿이 지정해준다.    
+> 2. 해당 컨트롤러에서 필요한 서비스 빈을 가져와서 그 서비스의 메소드를 호출한다.   
+> 3. 해당 서비스에서는 MyBatis 라이브러리를 활용하여 DAO 대신 SqlSession 객체로 매퍼에 접근한다.    
+> 4. 매퍼는 서비스에서 요구하는 응답을 받기 위해 DB에 쿼리를 날려서 필요한 결과를 얻어서 반환한다.    
+> 5. 반환된 결과는 컨트롤러에게 전달되어 이를 ResponseEntity로 Client에 응답한다.    
